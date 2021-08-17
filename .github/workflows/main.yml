@@ -1,0 +1,23 @@
+on:
+  - push
+  - workflow_dispatch
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+      # 作成したアクションの実行 ここから 
+      - name: Hello world action step
+        id: hello
+        # リポジトリのパスに合わせる
+        uses: masa06033/javascript_action_docs2@v1.1
+        #with:
+          # 指定がない場合はaction.ymlで設定したデフォルト値が設定される
+          #who-to-greet: 'Mona the Octocat'
+      # 作成したアクションの実行 ここまで 
+      
+      # Use the output from the `hello` step
+      # 実行したアクションの出力確認
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
