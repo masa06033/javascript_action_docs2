@@ -12,9 +12,9 @@ jobs:
         id: hello
         # リポジトリのパスに合わせる
         uses: masa06033/javascript_action_docs2@v1.1
-        #with:
+        with:
           # 指定がない場合はaction.ymlで設定したデフォルト値が設定される
-          #who-to-greet: 'Mona the Octocat'
+          who-to-greet: 'Mona the Octocat'
       # 作成したアクションの実行 ここまで 
       
       # Use the output from the `hello` step
